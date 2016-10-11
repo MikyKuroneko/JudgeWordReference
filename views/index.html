@@ -1,0 +1,23 @@
+<div id="dialog">
+  <div class="options" style="width: 750px;" >
+    <select ng-model="newPage"
+      ng-options="page as 'pages.'+page | translate for page in pageList">
+      <option value="" translate="dialog.pages">Pages</option>
+    </select>
+  </div>
+  <div class="page" ng-drag="!!newPage" ng-class="{draggable:!!newPage}" ng-drag-data="newPage">
+    <ng-include src="'views/'+newPage+'.html'" ng-class="'page-'+newPage" ng-if="newPage"></ng-include>
+    <span ng-hide="newPage" translate="dialog.select">Select a page from the dropdown</span>
+  </div>
+  <div class="print">
+    <a href="javascript:window.print()" translate="dialog.print"></a>
+  </div>
+</div>
+
+<ul id="booklet" ng-class="language">
+  <li ng-repeat="page in pageNumbers" ng-drop="true" ng-drop-success="pageDrop($data, page)" ng-drag="!!pages[page]"
+      ng-drag-success="pageDrag($data, page)" ng-drag-data="pages[page]" ng-class="{draggable:!!pages[page]}">
+    <ng-include src="'views/'+pages[page]+'.html'" ng-class="'page-'+pages[page]" ng-if="pages[page]"></ng-include>
+    <button ng-click="pageRemove(page)" ng-if="pages[page]" translate="dialog.remove">Remove</button>
+  </li>
+</ul>
