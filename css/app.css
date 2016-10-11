@@ -1,0 +1,1089 @@
+/* app css stylesheet */
+
+body, html {
+  background: gray;
+  height: 100%;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  font-size: 1em;
+  font-size: 0.85vw;
+}
+
+body {
+  padding: 10px 10px 10px 22%;
+}
+
+a { text-decoration: underline; }
+ul { list-style-type: disc; }
+img {
+  max-width: 100%;
+  margin: 5px 0;
+}
+
+ng-include {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1em;
+  position: relative;
+}
+
+.center { text-align: center; }
+
+#content {
+  height: 100%;
+  position: relative;
+}
+
+#dialog {
+  position: absolute;
+  left: -27%;
+  width: 25%;
+  text-align: center;
+  top: 50%;
+  height: 50%;
+  margin-top: -25vh;
+  z-index: 10;
+}
+
+#dialog .options {
+  display: flex;
+  position: absolute;
+  top: -30px;
+}
+
+#dialog .options select:first-child { width: 70%; }
+#dialog .options select:last-child { width: 30%; }
+
+#dialog .page {
+  height: 100%;
+  background: white;
+  border: 2px solid #ddd;
+  box-sizing: border-box;
+  display: flex;
+  /* align-content: center; */
+  /* align-items: center; */
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  text-align: left;
+  overflow: hidden;
+}
+
+#dialog .page.draggable,
+#booklet li.draggable {
+  cursor: move;
+}
+
+#dialog .page.draggable:hover,
+#booklet li.draggable:hover {
+  background: #ddd;
+}
+
+#dialog .page > span { width: 100%;padding: 1em;font-weight: bold;text-align: center;}
+
+#dialog .print {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  text-align: center;
+}
+
+#dialog .print a {
+  display: inline-block;
+  background: #ff3019;
+  background: -moz-linear-gradient(top, #ff3019 0%, #cf0404 100%);
+  background: -webkit-linear-gradient(top, #ff3019 0%,#cf0404 100%);
+  background: linear-gradient(to bottom, #ff3019 0%,#cf0404 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 );
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  font-size: 14pt;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 2px solid #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+#booklet {
+  height: 100%;
+  width: 100%;
+  background: #ddd;
+  list-style-type: none;
+  padding: 0;
+  margin:  0;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3), inset 5px 5px 15px rgba(0,0,0,0.3);
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#booklet > li {
+  box-sizing: border-box;
+  width: 25%;
+  height: 50%;
+  border: 1px solid #ddd;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: flex;
+  /* align-items: center; */
+  background: white;
+  overflow: hidden;
+  position: relative;
+}
+
+#booklet li.drag-enter {
+  background: #ccc;
+}
+
+#booklet li > button {
+  position: absolute;
+  left: 50%;
+  width: 6em;
+  bottom: 1em;
+  margin-left: -3em;
+  z-index: 2000;
+  display: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+#booklet li:hover > button {
+  display: block;
+}
+
+#booklet li.dragging:hover > button {
+  display: none;
+}
+
+h1 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0.5em 0;
+}
+
+h3 {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0.5em 0;
+  text-decoration: underline;
+  text-align: center;
+}
+
+/************* Printing *************/
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 2mm 2mm 2mm 2mm;
+  }
+  body {
+    padding: 0;
+    font-size: 9pt;
+    background: none;
+  }
+  #dialog {
+    display: none;
+  }
+  #booklet {
+    border: none;
+    background: none;
+  }
+
+  #booklet > li {
+    background: none;
+  }
+  #booklet > li:nth-child(n+5) ng-include {
+    transform: rotate(180deg);
+  }
+  #booklet li:hover > button {
+    display: none;
+  }
+}
+
+/* style sheet for "A4" printing */
+@media print and (width: 21cm) and (height: 29.7cm) {
+  @page {
+  }
+}
+
+/* style sheet for "letter" printing */
+@media print and (width: 8.5in) and (height: 11in) {
+  @page {
+  }
+}
+
+
+/********** Pages : useful sentences ***********/
+
+
+
+/* Useful sentences (1/4) - English */
+.page-sentences-1-en {
+  font-size: 75%;
+}
+
+.page-sentences-1-en ul {
+  padding-left: 10px;
+}
+
+.page-sentences-1-en table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-1-en table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-1-en table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (1/4) - Español */
+.page-sentences-1-es {
+  font-size: 75%;
+}
+
+.page-sentences-1-es ul {
+  padding-left: 10px;
+}
+
+.page-sentences-1-es table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-1-es table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-1-es table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (1/4) - Italiano */
+.page-sentences-1-it {
+  font-size: 75%;
+}
+
+.page-sentences-1-it ul {
+  padding-left: 10px;
+}
+
+.page-sentences-1-it table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-1-it table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-1-it table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (1/4) - Français */
+.page-sentences-1-fr {
+  font-size: 75%;
+}
+
+.page-sentences-1-fr ul {
+  padding-left: 10px;
+}
+
+.page-sentences-1-fr table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-1-fr table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-1-fr table td {
+  padding: 0 5px;
+}
+
+
+
+
+/* Useful sentences (2/4) - English */
+.page-sentences-2-en {
+  font-size: 75%;
+}
+
+.page-sentences-2-en ul {
+  padding-left: 10px;
+}
+
+.page-sentences-2-en table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-2-en table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-2-en table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (2/4) - Español */
+.page-sentences-2-es {
+  font-size: 75%;
+}
+
+.page-sentences-2-es ul {
+  padding-left: 10px;
+}
+
+.page-sentences-2-es table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-2-es table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-2-es table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (2/4) - Italiano */
+.page-sentences-2-it {
+  font-size: 75%;
+}
+
+.page-sentences-2-it ul {
+  padding-left: 10px;
+}
+
+.page-sentences-2-it table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-2-it table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-2-it table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (2/4) - Français */
+.page-sentences-2-fr {
+  font-size: 75%;
+}
+
+.page-sentences-2-fr ul {
+  padding-left: 10px;
+}
+
+.page-sentences-2-fr table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-2-fr table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-2-fr table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (3/4) - English */
+.page-sentences-3-en {
+  font-size: 75%;
+}
+
+.page-sentences-3-en ul {
+  padding-left: 10px;
+}
+
+.page-sentences-3-en table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-3-en table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-3-en table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (3/4) - Español */
+.page-sentences-3-es {
+  font-size: 75%;
+}
+
+.page-sentences-3-es ul {
+  padding-left: 10px;
+}
+
+.page-sentences-3-es table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-3-es table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-3-es table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (3/4) - Italiano */
+.page-sentences-3-it {
+  font-size: 75%;
+}
+
+.page-sentences-3-it ul {
+  padding-left: 10px;
+}
+
+.page-sentences-3-it table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-3-it table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-3-it table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (3/4) - Français */
+.page-sentences-3-fr {
+  font-size: 75%;
+}
+
+.page-sentences-3-fr ul {
+  padding-left: 10px;
+}
+
+.page-sentences-3-fr table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-3-fr table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-3-fr table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (4/4) - English */
+.page-sentences-4-en {
+  font-size: 75%;
+}
+
+.page-sentences-4-en ul {
+  padding-left: 10px;
+}
+
+.page-sentences-4-en table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-4-en table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-4-en table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (4/4) - Español */
+.page-sentences-4-es {
+  font-size: 75%;
+}
+
+.page-sentences-4-es ul {
+  padding-left: 10px;
+}
+
+.page-sentences-4-es table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-4-es table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-4-es table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (4/4) - Italiano */
+.page-sentences-4-it {
+  font-size: 75%;
+}
+
+.page-sentences-4-it ul {
+  padding-left: 10px;
+}
+
+.page-sentences-4-it table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-4-it table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-4-it table td {
+  padding: 0 5px;
+}
+
+
+/* Useful sentences (4/4) - Français */
+.page-sentences-4-fr {
+  font-size: 75%;
+}
+
+.page-sentences-4-fr ul {
+  padding-left: 10px;
+}
+
+.page-sentences-4-fr table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-sentences-4-fr table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-sentences-4-fr table td {
+  padding: 0 5px;
+}
+
+
+
+
+/********** Pages : basics ***********/
+
+/* Basics - English */
+.page-basics-en {
+  font-size: 75%;
+}
+
+.page-basics-en ul {
+  padding-left: 10px;
+}
+
+.page-basics-en table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-basics-en table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-basics-en table td {
+  padding: 0 5px;
+}
+
+
+/* Basics - Español */
+.page-basics-es {
+  font-size: 75%;
+}
+
+.page-basics-es ul {
+  padding-left: 10px;
+}
+
+.page-basics-es table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-basics-es table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-basics-es table td {
+  padding: 0 5px;
+}
+
+
+/* Basics - Italiano */
+.page-basics-it {
+  font-size: 75%;
+}
+
+.page-basics-it ul {
+  padding-left: 10px;
+}
+
+.page-basics-it table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-basics-it table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-basics-it table td {
+  padding: 0 5px;
+}
+
+
+/* Basics - Français */
+.page-basics-fr {
+  font-size: 75%;
+}
+
+.page-basics-fr ul {
+  padding-left: 10px;
+}
+
+.page-basics-fr table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-basics-fr table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-basics-fr table td {
+  padding: 0 5px;
+}
+
+
+/********** Pages : tournament ***********/
+/* Tournament - English */
+.page-tournament-en {
+  font-size: 75%;
+}
+
+.page-tournament-en ul {
+  padding-left: 10px;
+}
+
+.page-tournament-en table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-tournament-en table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-tournament-en table td {
+  padding: 0 5px;
+}
+
+
+/* Tournament - Español */
+.page-tournament-es {
+  font-size: 75%;
+}
+
+.page-tournament-es ul {
+  padding-left: 10px;
+}
+
+.page-tournament-es table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-tournament-es table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-tournament-es table td {
+  padding: 0 5px;
+}
+
+
+/* Tournament - Italiano */
+.page-tournament-it {
+  font-size: 75%;
+}
+
+.page-tournament-it ul {
+  padding-left: 10px;
+}
+
+.page-tournament-it table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-tournament-it table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-tournament-it table td {
+  padding: 0 5px;
+}
+
+
+/* Tournament - Français */
+.page-tournament-fr {
+  font-size: 75%;
+}
+
+.page-tournament-fr ul {
+  padding-left: 10px;
+}
+
+.page-tournament-fr table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-tournament-fr table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-tournament-fr table td {
+  padding: 0 5px;
+}
+
+
+/********** Pages : IPG ***********/
+/* IPG - English */
+.page-ipg-en {
+  font-size: 75%;
+}
+
+.page-ipg-en ul {
+  padding-left: 10px;
+}
+
+.page-ipg-en table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-ipg-en table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-ipg-en table td {
+  padding: 0 5px;
+}
+
+
+/* IPG - Español */
+.page-ipg-es {
+  font-size: 75%;
+}
+
+.page-ipg-es ul {
+  padding-left: 10px;
+}
+
+.page-ipg-es table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-ipg-es table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-ipg-es table td {
+  padding: 0 5px;
+}
+
+
+/* IPG - Italiano */
+.page-ipg-it {
+  font-size: 75%;
+}
+
+.page-ipg-it ul {
+  padding-left: 10px;
+}
+
+.page-ipg-it table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-ipg-it table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-ipg-it table td {
+  padding: 0 5px;
+}
+
+
+/* IPG - Français */
+.page-ipg-fr {
+  font-size: 75%;
+}
+
+.page-ipg-fr ul {
+  padding-left: 10px;
+}
+
+.page-ipg-fr table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-ipg-fr table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-ipg-fr table td {
+  padding: 0 5px;
+}
+
+
+/* IPG - Deutsch */
+.page-ipg-de {
+  font-size: 75%;
+}
+
+.page-ipg-de ul {
+  padding-left: 10px;
+}
+
+.page-ipg-de table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-ipg-de table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-ipg-de table td {
+  padding: 0 5px;
+}
+
+
+/* IPG - Português */
+.page-ipg-pt {
+  font-size: 75%;
+}
+
+.page-ipg-pt ul {
+  padding-left: 10px;
+}
+
+.page-ipg-pt table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-ipg-pt table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-ipg-pt table td {
+  padding: 0 5px;
+}
+
+
+/* IPG - 中文 (Chinese) */
+.page-ipg-cn {
+  font-size: 75%;
+}
+
+.page-ipg-cn ul {
+  padding-left: 10px;
+}
+
+.page-ipg-cn table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-ipg-cn table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-ipg-cn table td {
+  padding: 0 5px;
+}
+
+
+/* IPG - Русский (Russian) */
+.page-ipg-ru {
+  font-size: 75%;
+}
+
+.page-ipg-ru ul {
+  padding-left: 10px;
+}
+
+.page-ipg-ru table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-ipg-ru table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-ipg-ru table td {
+  padding: 0 5px;
+}
+
+
+/* IPG - 日本語 (Japanese) */
+.page-ipg-jp {
+  font-size: 75%;
+}
+
+.page-ipg-jp ul {
+  padding-left: 10px;
+}
+
+.page-ipg-jp table {
+  float: right;
+  border: 1px solid black;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+.page-ipg-jp table thead td {
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.page-ipg-jp table td {
+  padding: 0 5px;
+}
