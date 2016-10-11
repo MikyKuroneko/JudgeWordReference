@@ -1,0 +1,51 @@
+{
+  "pages": {
+    "sentences-1-en": "1 - Useful sentences (1/4)",
+    "sentences-1-es": "1 - Frases útiles (1/4)",
+    "sentences-1-it": "1 - Frasi utili (1/4)",
+    "sentences-1-fr": "1 - Phrases utiles (1/4)",
+
+    "sentences-2-en": "2 - Useful sentences (2/4)",
+    "sentences-2-es": "2 - Frases útiles (2/4)",
+    "sentences-2-it": "2 - Frasi utili (2/4)",
+    "sentences-2-fr": "2 - Phrases utiles (2/4)",
+
+    "sentences-3-en": "3 - Useful sentences (3/4)",
+    "sentences-3-es": "3 - Frases útiles (3/4)",
+    "sentences-3-it": "3 - Frasi utili (3/4)",
+    "sentences-3-fr": "3 - Phrases utiles (3/4)",
+
+    "sentences-4-en": "4 - Useful sentences (4/4)",
+    "sentences-4-es": "4 - Frases útiles (4/4)",
+    "sentences-4-it": "4 - Frasi utili (4/4)",
+    "sentences-4-fr": "4 - Phrases utiles (4/4)",
+
+
+
+    "basics-en": "5 - The basics",
+    "basics-es": "5 - Los conceptos básicos",
+    "basics-it": "5 - Le nozioni di base",
+    "basics-fr": "5 - Les bases",
+
+    "tournament-en": "6 - The tournaments",
+    "tournament-es": "6 - Los torneos",
+    "tournament-it": "6 - I tornei",
+    "tournament-fr": "6 - Les tournois",
+
+    "ipg-en": "7 - IPG - English",
+    "ipg-es": "7 - IPG - Español",
+    "ipg-it": "7 - IPG - Italiano",
+    "ipg-fr": "7 - IPG - Français",
+    "ipg-de": "7 - IPG - Deutsch",
+    "ipg-pt": "7 - IPG - Português",
+    "ipg-cn": "7 - IPG - 中文",
+    "ipg-jp": "7 - IPG - 日本語",
+    "ipg-ru": "7 - IPG - Русский"
+  },
+  "dialog": {
+    "pages": "Available pages",
+    "select": "Select a page from the dropdown and drag it into your booklet. You can rearrange and delete pages of the booklet.",
+    "remove": "Remove",
+    "print": "Print this booklet!"
+  }
+}
