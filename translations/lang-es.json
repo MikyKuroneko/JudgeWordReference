@@ -1,0 +1,51 @@
+{
+  "pages": {
+    "sentences-1-en": "1 - Useful sentences (1/4) (Inglés)",
+    "sentences-1-es": "1 - Frases útiles (1/4) (Español)",
+    "sentences-1-it": "1 - Frasi utili (1/4) (Italiano)",
+    "sentences-1-fr": "1 - Phrases utiles (1/4) (Francés)",
+
+    "sentences-2-en": "2 - Useful sentences (2/4) (Inglés)",
+    "sentences-2-es": "2 - Frases útiles (2/4) (Español)",
+    "sentences-2-it": "2 - Frasi utili (2/4) (Italiano)",
+    "sentences-2-fr": "2 - Phrases utiles (2/4) (Francés)",
+
+    "sentences-3-en": "3 - Useful sentences (3/4) (Inglés)",
+    "sentences-3-es": "3 - Frases útiles (3/4) (Español)",
+    "sentences-3-it": "3 - Frasi utili (3/4) (Italiano)",
+    "sentences-3-fr": "3 - Phrases utiles (3/4) (Francés)",
+
+    "sentences-4-en": "4 - Useful sentences (4/4) (Inglés)",
+    "sentences-4-es": "4 - Frases útiles (4/4) (Español)",
+    "sentences-4-it": "4 - Frasi utili (4/4) (Italiano)",
+    "sentences-4-fr": "4 - Phrases utiles (4/4) (Francés)",
+
+
+
+    "basics-en": "5 - The basics (Inglés)",
+    "basics-es": "5 - Los conceptos básicos (Español)",
+    "basics-it": "5 - Le nozioni di base (Italiano)",
+    "basics-fr": "5 - Les bases (Francés)",
+
+    "tournament-en": "6 - The tournaments (Inglés)",
+    "tournament-es": "6 - Los torneos (Español)",
+    "tournament-it": "6 - I tornei (Italiano)",
+    "tournament-fr": "6 - Les tournois (Francés)",
+
+    "ipg-en": "7 - IPG - Inglés",
+    "ipg-es": "7 - IPG - Español",
+    "ipg-it": "7 - IPG - Italiano",
+    "ipg-fr": "7 - IPG - Francés",
+    "ipg-de": "7 - IPG - Alemán",
+    "ipg-pt": "7 - IPG - Portugués",
+    "ipg-cn": "7 - IPG - Chino",
+    "ipg-jp": "7 - IPG - Japonés",
+    "ipg-ru": "7 - IPG - Ruso"
+  },
+  "dialog": {
+    "pages": "Páginas disponibles",
+    "select": "Selecciona una página del selector múltiple y arrástrala hasta tu libreto. Puedes reorganizar y eliminar páginas del libreto.",
+    "remove": "Eliminar",
+    "print": "¡Imprimir este libreto!"
+  }
+}
